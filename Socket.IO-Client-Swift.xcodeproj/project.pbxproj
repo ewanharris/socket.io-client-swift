@@ -539,6 +539,10 @@
 				"ENABLE_BITCODE[sdk=macosx*]" = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)/**",
+					"$(PROJECT_DIR)/Carthage/Build/**",
+				);
 				"FRAMEWORK_SEARCH_PATHS[sdk=appletvos*]" = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
@@ -614,6 +618,10 @@
 				ENABLE_BITCODE = YES;
 				"ENABLE_BITCODE[sdk=macosx*]" = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)/**",
+					"$(PROJECT_DIR)/Carthage/Build/**",
+				);
 				"FRAMEWORK_SEARCH_PATHS[sdk=appletvos*]" = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
