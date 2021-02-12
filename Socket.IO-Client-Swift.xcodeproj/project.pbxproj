@@ -120,7 +120,6 @@
 			files = (
 				74DA21741F09440F009C19EE /* libz.tbd in Frameworks */,
 				6CA08A981D615C0B0061FD2A /* Security.framework in Frameworks */,
-				74D0F5961F8053950037C4DC /* Starscream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +352,7 @@
 				572EF2341B51F18A00EEBB58 /* Frameworks */,
 				572EF2351B51F18A00EEBB58 /* Headers */,
 				572EF2361B51F18A00EEBB58 /* Resources */,
+				C403F61125D6A77100C33CFF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -439,7 +439,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06B753202453DFEE00C48C70 /* ShellScript */ = {
+		74BF53571F8930D3004972D8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "for path in $FRAMEWORK_SEARCH_PATHS\ndo\n    if [ -d \"${path}/Starscream.xcframework\" ] && [[ $path == *\"Carthage\"* ]]; then\n        export SCRIPT_INPUT_FILE_COUNT=1\n        export SCRIPT_INPUT_FILE_0=\"${path}/Starscream.framework\"\n        /usr/local/bin/carthage copy-frameworks\n        break\n    fi\ndone\n";
+		};
+		C403F61125D6A77100C33CFF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -454,20 +467,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "for path in $FRAMEWORK_SEARCH_PATHS\ndo\n    if [ -d \"${path}/Starscream.xcframework\" ] && [[ $path == *\"Carthage\"* ]]; then\n        export SCRIPT_INPUT_FILE_COUNT=1\n        export SCRIPT_INPUT_FILE_0=\"${path}/Starscream.xcframework\"\n        /usr/local/bin/carthage copy-frameworks\n        break\n    fi\ndone\n";
-		};
-		74BF53571F8930D3004972D8 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "for path in $FRAMEWORK_SEARCH_PATHS\ndo\n    if [ -d \"${path}/Starscream.xcframework\" ] && [[ $path == *\"Carthage\"* ]]; then\n        export SCRIPT_INPUT_FILE_COUNT=1\n        export SCRIPT_INPUT_FILE_0=\"${path}/Starscream.framework\"\n        /usr/local/bin/carthage copy-frameworks\n        break\n    fi\ndone";
+			shellScript = "for path in $FRAMEWORK_SEARCH_PATHS\ndo\n    if [ -d \"${path}/Starscream.xcframework\" ] && [[ $path == *\"Carthage\"* ]]; then\n        export SCRIPT_INPUT_FILE_COUNT=1\n        export SCRIPT_INPUT_FILE_0=\"${path}/Starscream.framework\"\n        /usr/local/bin/carthage copy-frameworks\n        break\n    fi\ndone\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
